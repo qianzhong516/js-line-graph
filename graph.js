@@ -46,8 +46,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
         // examine arr values
         arr.forEach(item => {
             // console.log(item)
-            if(isNaN(item.y) || item.y < 0 || !item.x) {
-                throw 'dataset format is wrong'
+            if(isNaN(item.y) || item.y < 0 || !item.x ) {
+                throw 'Dataset\'s format is wrong.'
+            }
+
+            if(item.y > yunit.value * yunit_amount.value) {
+                throw 'Max Y value in the dataset exceeds the max value on Y axis.'
             }
         })
         return arr
