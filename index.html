@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Graph</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./graph.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>JS Line Graph</h1>
+            <small><b>By <a href="https://github.com/qianzhong516" target="_blank">Janice Zhong</a></b></small>
+        </div>
+        <canvas id="line-graph" width="400" height="400">
+            This browser doesn't support HTML canvas.
+        </canvas>
+        <form action="/" method="GET">
+            <div class="form-control">
+                <label for="yunit">Y axis unit value: </label>
+                <input id="yunit" name="yunit" type="number" min=50 max=100 value=50 required>
+            </div>
+            <div class="form-control">
+                <label for="yunit-amount">Y axis unit amount: </label>
+                <input id="yunit-amount" name="yunit" type="number" min=5 max=10 value=10 required>
+            </div>
+            <div class="form-control">
+                <label for="dataset">Data displayed on the graph:</label>
+                <p><small>Please follow the correct format below.</small></p>
+                <textarea name="dataset" id="dataset" cols="30" rows="10" required>x:Jan, y:100 | x:Feb, y:200 | x:Mar, y:150 | x:Apr, y:400 | x:May, y:50</textarea>
+            </div>
+            <button id="submit" type="submit">Get new graph</button>
+            <a id="make-img" href="#" download="line-graph.jpg">Generate as an image</a>
+        </form>
+    </div>
+</body>
+</html>
