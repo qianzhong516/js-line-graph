@@ -34,9 +34,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
             if(datasets[i]!=="") {
                 fields = datasets[i].split(',')
                 if(fields[0]!=="" && fields[1]!=="") {
-                    fields[0] = fields[0].trim()
-                    fields[1] = fields[1].trim()
-                    const x = fields[0].indexOf('x:') === 0 ? fields[0].substr(2) : null
+                    fields[0] = fields[0].replaceAll(' ','')
+                    fields[1] = fields[1].replaceAll(' ','')
+                    const x = fields[0].indexOf('x:') === 0 ? capitalize(fields[0].substr(2)) : null
                     const y = fields[1].indexOf('y:') === 0 ? parseInt(fields[1].substr(2)) : NaN
                     arr.push({x, y})
                 }
@@ -51,6 +51,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
             }
         })
         return arr
+    }
+
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.substr(1)
     }
 })
 
